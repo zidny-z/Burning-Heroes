@@ -109,13 +109,8 @@ class f_login ( wx.Frame ):
 
 		bSizer11.Add( self.login_username, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.login_Password = wx.TextCtrl( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.Size( 400,30 ), 0 )
+		self.login_Password = wx.TextCtrl( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.Size( 400,30 ), wx.TE_PASSWORD )
 		bSizer11.Add( self.login_Password, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
-
-		self.cb_ingat_saya = wx.CheckBox( self, wx.ID_ANY, u"Ingat saya!", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.cb_ingat_saya.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_MENU ) )
-
-		bSizer11.Add( self.cb_ingat_saya, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.btn_lupa_pswd = wx.Button( self, wx.ID_ANY, u"Lupa Password", wx.DefaultPosition, wx.Size( 400,30 ), 0 )
 		self.btn_lupa_pswd.SetToolTip( u"Lupa Password" )
@@ -138,7 +133,6 @@ class f_login ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.cb_ingat_saya.Bind( wx.EVT_CHECKBOX, self.cb_ingat_sayaOnCheckBox )
 		self.btn_lupa_pswd.Bind( wx.EVT_BUTTON, self.btn_lupa_pswdOnButtonClick )
 		self.btn_login.Bind( wx.EVT_BUTTON, self.btn_loginOnButtonClick )
 
@@ -147,9 +141,6 @@ class f_login ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
-	def cb_ingat_sayaOnCheckBox( self, event ):
-		event.Skip()
-
 	def btn_lupa_pswdOnButtonClick( self, event ):
 		event.Skip()
 
@@ -186,10 +177,10 @@ class f_daftar ( wx.Frame ):
 
 		bSizer11.Add( self.daftar_username, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.daftar_password = wx.TextCtrl( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.Size( 400,30 ), 0 )
+		self.daftar_password = wx.TextCtrl( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.Size( 400,30 ), wx.TE_PASSWORD )
 		bSizer11.Add( self.daftar_password, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
-		self.daftar_password2 = wx.TextCtrl( self, wx.ID_ANY, u"Ulangi Password", wx.DefaultPosition, wx.Size( 400,30 ), 0 )
+		self.daftar_password2 = wx.TextCtrl( self, wx.ID_ANY, u"Ulangi P", wx.DefaultPosition, wx.Size( 400,30 ), wx.TE_PASSWORD )
 		bSizer11.Add( self.daftar_password2, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.daftar_hint = wx.TextCtrl( self, wx.ID_ANY, u"Hint", wx.DefaultPosition, wx.Size( 400,30 ), 0 )
@@ -252,19 +243,19 @@ class f_menu ( wx.Frame ):
 		self.txt_menu_username = wx.StaticText( self, wx.ID_ANY, u"Username : ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.txt_menu_username.Wrap( -1 )
 
-		self.txt_menu_username.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.txt_menu_username.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.txt_menu_username.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 		self.txt_menu_username.SetToolTip( u"Jumlah Koin Anda" )
 
-		bSizer26.Add( self.txt_menu_username, 1, wx.ALL, 5 )
+		bSizer26.Add( self.txt_menu_username, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.menu_username = wx.StaticText( self, wx.ID_ANY, u"Aku", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
 		self.menu_username.Wrap( -1 )
 
-		self.menu_username.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.menu_username.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.menu_username.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DLIGHT ) )
 
-		bSizer26.Add( self.menu_username, 0, wx.ALL, 5 )
+		bSizer26.Add( self.menu_username, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 
 		bSizer3.Add( bSizer26, 1, wx.EXPAND, 5 )
@@ -274,19 +265,19 @@ class f_menu ( wx.Frame ):
 		self.tx_user_stage = wx.StaticText( self, wx.ID_ANY, u"Stage : ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.tx_user_stage.Wrap( -1 )
 
-		self.tx_user_stage.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.tx_user_stage.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.tx_user_stage.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 		self.tx_user_stage.SetToolTip( u"Jumlah Koin Anda" )
 
-		bSizer261.Add( self.tx_user_stage, 1, wx.ALL, 5 )
+		bSizer261.Add( self.tx_user_stage, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.menu_stage = wx.StaticText( self, wx.ID_ANY, u"1", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
 		self.menu_stage.Wrap( -1 )
 
-		self.menu_stage.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.menu_stage.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.menu_stage.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DLIGHT ) )
 
-		bSizer261.Add( self.menu_stage, 0, wx.ALL, 5 )
+		bSizer261.Add( self.menu_stage, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 
 		bSizer3.Add( bSizer261, 1, wx.EXPAND, 5 )
@@ -321,11 +312,6 @@ class f_menu ( wx.Frame ):
 
 		bSizer3.Add( self.tentang, 0, wx.ALL|wx.EXPAND, 5 )
 
-		self.logout = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.Size( -1,50 ), 0 )
-		self.logout.SetToolTip( u"Logout" )
-
-		bSizer3.Add( self.logout, 0, wx.ALL|wx.EXPAND, 5 )
-
 		self.exit = wx.Button( self, wx.ID_ANY, u"Exit", wx.DefaultPosition, wx.Size( -1,50 ), 0 )
 		self.exit.SetToolTip( u"Exit" )
 
@@ -347,14 +333,38 @@ class f_menu ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.fight.Bind( wx.EVT_BUTTON, self.fightOnButtonClick )
 		self.hero_menu.Bind( wx.EVT_BUTTON, self.hero_menuOnButtonClick )
+		self.inventory.Bind( wx.EVT_BUTTON, self.inventoryOnButtonClick )
+		self.shop.Bind( wx.EVT_BUTTON, self.shopOnButtonClick )
+		self.petunjuk.Bind( wx.EVT_BUTTON, self.petunjukOnButtonClick )
+		self.tentang.Bind( wx.EVT_BUTTON, self.tentangOnButtonClick )
+		self.exit.Bind( wx.EVT_BUTTON, self.exitOnButtonClick )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
+	def fightOnButtonClick( self, event ):
+		event.Skip()
+
 	def hero_menuOnButtonClick( self, event ):
+		event.Skip()
+
+	def inventoryOnButtonClick( self, event ):
+		event.Skip()
+
+	def shopOnButtonClick( self, event ):
+		event.Skip()
+
+	def petunjukOnButtonClick( self, event ):
+		event.Skip()
+
+	def tentangOnButtonClick( self, event ):
+		event.Skip()
+
+	def exitOnButtonClick( self, event ):
 		event.Skip()
 
 
@@ -365,7 +375,7 @@ class f_menu ( wx.Frame ):
 class f_petunjuk_permainan ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Petunjuk Permainan - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 630,438 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Petunjuk Permainan - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 630,466 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWFRAME ) )
@@ -386,10 +396,10 @@ class f_petunjuk_permainan ( wx.Frame ):
 		self.m_bpButton14.SetBitmap( wx.Bitmap( u"properties/img/BANNER.bmp", wx.BITMAP_TYPE_ANY ) )
 		bSizer3.Add( self.m_bpButton14, 0, wx.ALL|wx.EXPAND, 5 )
 
-		self.deskripsi = wx.StaticText( self, wx.ID_ANY, u"Silahkan daftarkan diri anda jika belum mempunyai akun. \nJangan lupa ingat username, hint dan password anda.\nSilahkan Menakan button sesuai kebutuhan Anda. \nBelilah item yang sesuai dengan koin Anda. \n\n\nSelamat Berperang di game!", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.deskripsi = wx.StaticText( self, wx.ID_ANY, u"1. Menu Fight\nUser diharuskan memilih 2 hero dari 4 hero yang ada, kemudian user dapat memilih menggunakan item yang dimiliki kepada hero yang dipilih. \n2. Menu Shop\nUser dapat membeli item melalui fitur menu\n3. Menu Inventory\nUser dapat melihat stage, jumlah koin dan item yang dimiliki\n4. Menu Hero\nUser dapat melihat seluruh detail karakter hero yang dimiliki\n\n\nSelamat Berperang di game!", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.deskripsi.Wrap( -1 )
 
-		self.deskripsi.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.deskripsi.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.deskripsi.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
 
 		bSizer3.Add( self.deskripsi, 1, wx.ALL|wx.EXPAND, 5 )
@@ -789,8 +799,16 @@ class f_hero_menu ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.m_bpButton65.Bind( wx.EVT_BUTTON, self.m_bpButton65OnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def m_bpButton65OnButtonClick( self, event ):
+		event.Skip()
 
 
 ###########################################################################
@@ -809,28 +827,28 @@ class f_inventory ( wx.Frame ):
 
 		bSizer26 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
-
-		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
-		bSizer26.Add( self.back_home, 0, wx.ALL, 5 )
-
 		self.txt_jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"Koin Anda : ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.txt_jumlah_koin.Wrap( -1 )
 
 		self.txt_jumlah_koin.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 		self.txt_jumlah_koin.SetToolTip( u"Jumlah Koin Anda" )
 
-		bSizer26.Add( self.txt_jumlah_koin, 1, wx.ALIGN_CENTER_VERTICAL, 5 )
+		bSizer26.Add( self.txt_jumlah_koin, 0, wx.ALL, 5 )
 
 		self.jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"9999", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
 		self.jumlah_koin.Wrap( -1 )
 
 		self.jumlah_koin.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 
-		bSizer26.Add( self.jumlah_koin, 0, wx.ALIGN_CENTER_VERTICAL, 5 )
+		bSizer26.Add( self.jumlah_koin, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
+
+		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
+		bSizer26.Add( self.back_home, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
 
 
-		bSizer24.Add( bSizer26, 0, 0, 5 )
+		bSizer24.Add( bSizer26, 0, wx.EXPAND, 5 )
 
 		gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
 
@@ -924,7 +942,7 @@ class f_inventory ( wx.Frame ):
 		self.img_potion1 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"properties/img/item/sharpener.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 200,100 ), 0 )
 		self.img_potion1.SetToolTip( u"Potion" )
 
-		bSizer2811.Add( self.img_potion1, 0, 0, 5 )
+		bSizer2811.Add( self.img_potion1, 0, wx.ALL, 5 )
 
 		self.sharpener_name = wx.StaticText( self, wx.ID_ANY, u"Sharpener", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.sharpener_name.Wrap( -1 )
@@ -1022,6 +1040,186 @@ class f_inventory ( wx.Frame ):
 
 	# Virtual event handlers, overide them in your derived class
 	def back_homeOnButtonClick( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class f_shop
+###########################################################################
+
+class f_shop ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Shop - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 645,529 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+
+		bSizer24 = wx.BoxSizer( wx.VERTICAL )
+
+		bSizer26 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.txt_jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"Koin Anda : ", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.txt_jumlah_koin.Wrap( -1 )
+
+		self.txt_jumlah_koin.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.txt_jumlah_koin.SetToolTip( u"Jumlah Koin Anda" )
+
+		bSizer26.Add( self.txt_jumlah_koin, 0, wx.ALL, 5 )
+
+		self.jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"9999", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.jumlah_koin.Wrap( -1 )
+
+		self.jumlah_koin.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+
+		bSizer26.Add( self.jumlah_koin, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
+
+		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
+		bSizer26.Add( self.back_home, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
+
+
+		bSizer24.Add( bSizer26, 0, wx.EXPAND, 5 )
+
+		gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
+
+		bSizer28 = wx.BoxSizer( wx.VERTICAL )
+
+		self.img_meat = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"properties/img/item/meat.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 200,100 ), 0 )
+		self.img_meat.SetToolTip( u"Meat" )
+
+		bSizer28.Add( self.img_meat, 0, wx.ALL, 5 )
+
+		self.meat_name = wx.StaticText( self, wx.ID_ANY, u"Meat", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.meat_name.Wrap( -1 )
+
+		self.meat_name.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+
+		bSizer28.Add( self.meat_name, 0, wx.ALL, 5 )
+
+		self.desc_meat = wx.StaticText( self, wx.ID_ANY, u"Meat menambahkan HP hero terpilih sebanyak 50 HP", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_meat.Wrap( -1 )
+
+		bSizer28.Add( self.desc_meat, 0, wx.ALL, 5 )
+
+		self.beli_meat = wx.Button( self, wx.ID_ANY, u"Beli", wx.DefaultPosition, wx.Size( 280,-1 ), 0 )
+		bSizer28.Add( self.beli_meat, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
+
+
+		gSizer1.Add( bSizer28, 1, 0, 5 )
+
+		bSizer281 = wx.BoxSizer( wx.VERTICAL )
+
+		self.img_potion = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"properties/img/item/potion.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 200,100 ), 0 )
+		self.img_potion.SetToolTip( u"Potion" )
+
+		bSizer281.Add( self.img_potion, 0, wx.ALL, 5 )
+
+		self.potion_name = wx.StaticText( self, wx.ID_ANY, u"Potion", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.potion_name.Wrap( -1 )
+
+		self.potion_name.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.potion_name.SetToolTip( u"Potion" )
+
+		bSizer281.Add( self.potion_name, 0, wx.ALL, 5 )
+
+		self.desc_potion = wx.StaticText( self, wx.ID_ANY, u"Potion memberikan efek damage tambahan 20% - 30%", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_potion.Wrap( -1 )
+
+		bSizer281.Add( self.desc_potion, 0, wx.ALL, 5 )
+
+		self.beli_potion = wx.Button( self, wx.ID_ANY, u"Beli", wx.DefaultPosition, wx.Size( 280,-1 ), 0 )
+		bSizer281.Add( self.beli_potion, 0, wx.ALL, 5 )
+
+
+		gSizer1.Add( bSizer281, 1, 0, 5 )
+
+		bSizer2811 = wx.BoxSizer( wx.VERTICAL )
+
+		self.img_potion1 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"properties/img/item/sharpener.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 200,100 ), 0 )
+		self.img_potion1.SetToolTip( u"Potion" )
+
+		bSizer2811.Add( self.img_potion1, 0, wx.ALL, 5 )
+
+		self.sharpener_name = wx.StaticText( self, wx.ID_ANY, u"Sharpener", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.sharpener_name.Wrap( -1 )
+
+		self.sharpener_name.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.sharpener_name.SetToolTip( u"Sharpener" )
+
+		bSizer2811.Add( self.sharpener_name, 0, wx.ALL, 5 )
+
+		self.desc_sharpener = wx.StaticText( self, wx.ID_ANY, u"Sharpener menambahkan 20 attack tambahan ", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_sharpener.Wrap( -1 )
+
+		bSizer2811.Add( self.desc_sharpener, 0, wx.ALL, 5 )
+
+		self.beli_sharpener = wx.Button( self, wx.ID_ANY, u"Beli", wx.DefaultPosition, wx.Size( 280,-1 ), 0 )
+		bSizer2811.Add( self.beli_sharpener, 0, wx.ALL, 5 )
+
+
+		gSizer1.Add( bSizer2811, 1, 0, 5 )
+
+		bSizer2812 = wx.BoxSizer( wx.VERTICAL )
+
+		self.img_giant_potion = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"properties/img/item/giant_potion.bmp", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 200,100 ), 0 )
+		self.img_giant_potion.SetToolTip( u"Giant Potion" )
+
+		bSizer2812.Add( self.img_giant_potion, 0, wx.ALL, 5 )
+
+		self.giant_potion_name = wx.StaticText( self, wx.ID_ANY, u"Giant Potion", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.giant_potion_name.Wrap( -1 )
+
+		self.giant_potion_name.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+
+		bSizer2812.Add( self.giant_potion_name, 0, wx.ALL, 5 )
+
+		self.desc_giant_potion = wx.StaticText( self, wx.ID_ANY, u"Giant Potion menambahkan Hp sebanyak 30% - 40%", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_giant_potion.Wrap( -1 )
+
+		bSizer2812.Add( self.desc_giant_potion, 0, wx.ALL, 5 )
+
+		self.beli_giant_potion = wx.Button( self, wx.ID_ANY, u"Beli", wx.DefaultPosition, wx.Size( 280,-1 ), 0 )
+		bSizer2812.Add( self.beli_giant_potion, 0, wx.ALL, 5 )
+
+
+		gSizer1.Add( bSizer2812, 1, 0, 5 )
+
+
+		bSizer24.Add( gSizer1, 1, 0, 5 )
+
+
+		self.SetSizer( bSizer24 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.back_home.Bind( wx.EVT_BUTTON, self.back_homeOnButtonClick )
+		self.beli_meat.Bind( wx.EVT_BUTTON, self.beli_meatOnButtonClick )
+		self.beli_potion.Bind( wx.EVT_BUTTON, self.beli_potionOnButtonClick )
+		self.beli_sharpener.Bind( wx.EVT_BUTTON, self.beli_sharpenerOnButtonClick )
+		self.beli_giant_potion.Bind( wx.EVT_BUTTON, self.beli_giant_potionOnButtonClick )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def back_homeOnButtonClick( self, event ):
+		event.Skip()
+
+	def beli_meatOnButtonClick( self, event ):
+		event.Skip()
+
+	def beli_potionOnButtonClick( self, event ):
+		event.Skip()
+
+	def beli_sharpenerOnButtonClick( self, event ):
+		event.Skip()
+
+	def beli_giant_potionOnButtonClick( self, event ):
 		event.Skip()
 
 
@@ -1531,8 +1729,36 @@ class f_fight ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.btn_pakai_potion.Bind( wx.EVT_BUTTON, self.btn_pakai_potionOnButtonClick )
+		self.btn_pakai_sharpener.Bind( wx.EVT_BUTTON, self.btn_pakai_sharpenerOnButtonClick )
+		self.btn_pakai_giant_potion.Bind( wx.EVT_BUTTON, self.btn_pakai_giant_potionOnButtonClick )
+		self.btn_pakai_meat.Bind( wx.EVT_BUTTON, self.btn_pakai_meatOnButtonClick )
+		self.btn_ganti_hero.Bind( wx.EVT_BUTTON, self.btn_ganti_heroOnButtonClick )
+		self.btn_serang.Bind( wx.EVT_BUTTON, self.btn_serangOnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def btn_pakai_potionOnButtonClick( self, event ):
+		event.Skip()
+
+	def btn_pakai_sharpenerOnButtonClick( self, event ):
+		event.Skip()
+
+	def btn_pakai_giant_potionOnButtonClick( self, event ):
+		event.Skip()
+
+	def btn_pakai_meatOnButtonClick( self, event ):
+		event.Skip()
+
+	def btn_ganti_heroOnButtonClick( self, event ):
+		event.Skip()
+
+	def btn_serangOnButtonClick( self, event ):
+		event.Skip()
 
 
 ###########################################################################
@@ -1542,7 +1768,7 @@ class f_fight ( wx.Frame ):
 class f_pilih_hero_fight ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Pilih Hero - Fight", pos = wx.DefaultPosition, size = wx.Size( 854,535 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Pilih Hero - Fight", pos = wx.DefaultPosition, size = wx.Size( 854,579 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 19, 19, 19 ) )
@@ -1894,7 +2120,31 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.cb_hero_batman.Bind( wx.EVT_CHECKBOX, self.cb_hero_batmanOnCheckBox )
+		self.cb_hero_joker.Bind( wx.EVT_CHECKBOX, self.cb_hero_jokerOnCheckBox )
+		self.cb_hero_superman.Bind( wx.EVT_CHECKBOX, self.cb_hero_supermanOnCheckBox )
+		self.cb_hero_wonderwomen.Bind( wx.EVT_CHECKBOX, self.cb_hero_wonderwomenOnCheckBox )
+		self.btn_pilih_hero.Bind( wx.EVT_BUTTON, self.btn_pilih_heroOnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def cb_hero_batmanOnCheckBox( self, event ):
+		event.Skip()
+
+	def cb_hero_jokerOnCheckBox( self, event ):
+		event.Skip()
+
+	def cb_hero_supermanOnCheckBox( self, event ):
+		event.Skip()
+
+	def cb_hero_wonderwomenOnCheckBox( self, event ):
+		event.Skip()
+
+	def btn_pilih_heroOnButtonClick( self, event ):
+		event.Skip()
 
 
