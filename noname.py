@@ -249,7 +249,7 @@ class f_menu ( wx.Frame ):
 
 		bSizer26.Add( self.txt_menu_username, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.menu_username = wx.StaticText( self, wx.ID_ANY, u"Aku", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.menu_username = wx.StaticText( self, wx.ID_ANY, u"Aku", wx.Point( -1,-1 ), wx.Size( 101,-1 ), 0 )
 		self.menu_username.Wrap( -1 )
 
 		self.menu_username.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
@@ -440,7 +440,7 @@ class f_petunjuk_permainan ( wx.Frame ):
 class f_hero_menu ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Hero - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 644,533 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Hero - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 644,607 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.Colour( 12, 12, 12 ) )
@@ -818,7 +818,7 @@ class f_hero_menu ( wx.Frame ):
 class f_inventory ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Inventory - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 645,529 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Inventory - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 667,538 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
@@ -826,6 +826,11 @@ class f_inventory ( wx.Frame ):
 		bSizer24 = wx.BoxSizer( wx.VERTICAL )
 
 		bSizer26 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
+
+		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
+		bSizer26.Add( self.back_home, 0, wx.ALL, 5 )
 
 		self.txt_jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"Koin Anda : ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.txt_jumlah_koin.Wrap( -1 )
@@ -842,13 +847,8 @@ class f_inventory ( wx.Frame ):
 
 		bSizer26.Add( self.jumlah_koin, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
 
-		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
-		bSizer26.Add( self.back_home, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
-
-
-		bSizer24.Add( bSizer26, 0, wx.EXPAND, 5 )
+		bSizer24.Add( bSizer26, 0, 0, 5 )
 
 		gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
 
@@ -909,7 +909,7 @@ class f_inventory ( wx.Frame ):
 
 		bSizer281.Add( self.potion_name, 0, wx.ALL, 5 )
 
-		self.desc_potion = wx.StaticText( self, wx.ID_ANY, u"Potion memberikan efek damage tambahan 20% - 30%", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_potion = wx.StaticText( self, wx.ID_ANY, u"Potion memberikan efek damage tambahan 30%", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.desc_potion.Wrap( -1 )
 
 		bSizer281.Add( self.desc_potion, 0, wx.ALL, 5 )
@@ -994,7 +994,7 @@ class f_inventory ( wx.Frame ):
 
 		bSizer2812.Add( self.giant_potion_name, 0, wx.ALL, 5 )
 
-		self.desc_giant_potion = wx.StaticText( self, wx.ID_ANY, u"Giant Potion menambahkan Hp sebanyak 30% - 40%", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.desc_giant_potion = wx.StaticText( self, wx.ID_ANY, u"Giant Potion menambahkan Hp sebanyak 40%", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.desc_giant_potion.Wrap( -1 )
 
 		bSizer2812.Add( self.desc_giant_potion, 0, wx.ALL, 5 )
@@ -1059,6 +1059,11 @@ class f_shop ( wx.Frame ):
 
 		bSizer26 = wx.BoxSizer( wx.HORIZONTAL )
 
+		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
+
+		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
+		bSizer26.Add( self.back_home, 0, wx.ALL, 5 )
+
 		self.txt_jumlah_koin = wx.StaticText( self, wx.ID_ANY, u"Koin Anda : ", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.txt_jumlah_koin.Wrap( -1 )
 
@@ -1074,13 +1079,8 @@ class f_shop ( wx.Frame ):
 
 		bSizer26.Add( self.jumlah_koin, 1, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.back_home = wx.BitmapButton( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, wx.BU_AUTODRAW|0 )
 
-		self.back_home.SetBitmap( wx.ArtProvider.GetBitmap( wx.ART_GO_BACK, wx.ART_BUTTON ) )
-		bSizer26.Add( self.back_home, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
-
-
-		bSizer24.Add( bSizer26, 0, wx.EXPAND, 5 )
+		bSizer24.Add( bSizer26, 0, 0, 5 )
 
 		gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
 
@@ -1230,7 +1230,7 @@ class f_shop ( wx.Frame ):
 class f_fight ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Fight - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 803,562 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Fight - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 803,589 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INACTIVECAPTION ) )
@@ -1800,13 +1800,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer26115.Add( self.txt_attack_superman3, 1, wx.ALL, 5 )
 
-		self.attack_superman4 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman4.Wrap( -1 )
+		self.attack_batman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.attack_batman.Wrap( -1 )
 
-		self.attack_superman4.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman4.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.attack_batman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.attack_batman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 
-		bSizer26115.Add( self.attack_superman4, 0, wx.ALL, 5 )
+		bSizer26115.Add( self.attack_batman, 0, wx.ALL, 5 )
 
 
 		bSizer1653.Add( bSizer26115, 1, wx.EXPAND, 5 )
@@ -1822,13 +1822,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261113.Add( self.txt_hp_superman3, 1, wx.ALL, 5 )
 
-		self.HP_superman3 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.HP_superman3.Wrap( -1 )
+		self.hp_batman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.hp_batman.Wrap( -1 )
 
-		self.HP_superman3.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.HP_superman3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.hp_batman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.hp_batman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer261113.Add( self.HP_superman3, 0, wx.ALL, 5 )
+		bSizer261113.Add( self.hp_batman, 0, wx.ALL, 5 )
 
 
 		bSizer1653.Add( bSizer261113, 1, wx.EXPAND, 5 )
@@ -1844,13 +1844,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261123.Add( self.txt_max_hp_superman3, 1, wx.ALL, 5 )
 
-		self.attack_superman23 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman23.Wrap( -1 )
+		self.max_hp_batman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.max_hp_batman.Wrap( -1 )
 
-		self.attack_superman23.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman23.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DLIGHT ) )
+		self.max_hp_batman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.max_hp_batman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_3DLIGHT ) )
 
-		bSizer261123.Add( self.attack_superman23, 0, wx.ALL, 5 )
+		bSizer261123.Add( self.max_hp_batman, 0, wx.ALL, 5 )
 
 
 		bSizer1653.Add( bSizer261123, 1, wx.EXPAND, 5 )
@@ -1881,13 +1881,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer26114.Add( self.txt_attack_superman2, 1, wx.ALL, 5 )
 
-		self.attack_superman3 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman3.Wrap( -1 )
+		self.attack_joker = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.attack_joker.Wrap( -1 )
 
-		self.attack_superman3.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.attack_joker.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.attack_joker.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer26114.Add( self.attack_superman3, 0, wx.ALL, 5 )
+		bSizer26114.Add( self.attack_joker, 0, wx.ALL, 5 )
 
 
 		bSizer1652.Add( bSizer26114, 1, wx.EXPAND, 5 )
@@ -1903,13 +1903,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261112.Add( self.txt_hp_superman2, 1, wx.ALL, 5 )
 
-		self.HP_superman2 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.HP_superman2.Wrap( -1 )
+		self.hp_joker = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.hp_joker.Wrap( -1 )
 
-		self.HP_superman2.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.HP_superman2.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.hp_joker.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.hp_joker.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer261112.Add( self.HP_superman2, 0, wx.ALL, 5 )
+		bSizer261112.Add( self.hp_joker, 0, wx.ALL, 5 )
 
 
 		bSizer1652.Add( bSizer261112, 1, wx.EXPAND, 5 )
@@ -1925,13 +1925,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261122.Add( self.txt_max_hp_superman2, 1, wx.ALL, 5 )
 
-		self.attack_superman22 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman22.Wrap( -1 )
+		self.max_hp_joker = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.max_hp_joker.Wrap( -1 )
 
-		self.attack_superman22.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman22.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.max_hp_joker.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.max_hp_joker.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer261122.Add( self.attack_superman22, 0, wx.ALL, 5 )
+		bSizer261122.Add( self.max_hp_joker, 0, wx.ALL, 5 )
 
 
 		bSizer1652.Add( bSizer261122, 1, wx.EXPAND, 5 )
@@ -1962,13 +1962,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer26113.Add( self.txt_attack_superman1, 1, wx.ALL, 5 )
 
-		self.attack_superman1 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman1.Wrap( -1 )
+		self.attack_superman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.attack_superman.Wrap( -1 )
 
-		self.attack_superman1.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.attack_superman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.attack_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer26113.Add( self.attack_superman1, 0, wx.ALL, 5 )
+		bSizer26113.Add( self.attack_superman, 0, wx.ALL, 5 )
 
 
 		bSizer1651.Add( bSizer26113, 1, wx.EXPAND, 5 )
@@ -1984,13 +1984,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261111.Add( self.txt_hp_superman1, 1, wx.ALL, 5 )
 
-		self.HP_superman1 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.HP_superman1.Wrap( -1 )
+		self.hp_superman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.hp_superman.Wrap( -1 )
 
-		self.HP_superman1.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.HP_superman1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.hp_superman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.hp_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer261111.Add( self.HP_superman1, 0, wx.ALL, 5 )
+		bSizer261111.Add( self.hp_superman, 0, wx.ALL, 5 )
 
 
 		bSizer1651.Add( bSizer261111, 1, wx.EXPAND, 5 )
@@ -2006,13 +2006,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer261121.Add( self.txt_max_hp_superman1, 1, wx.ALL, 5 )
 
-		self.attack_superman21 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman21.Wrap( -1 )
+		self.max_hp_superman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.max_hp_superman.Wrap( -1 )
 
-		self.attack_superman21.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman21.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.max_hp_superman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.max_hp_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer261121.Add( self.attack_superman21, 0, wx.ALL, 5 )
+		bSizer261121.Add( self.max_hp_superman, 0, wx.ALL, 5 )
 
 
 		bSizer1651.Add( bSizer261121, 1, wx.EXPAND, 5 )
@@ -2043,13 +2043,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer2611.Add( self.txt_attack_superman, 1, wx.ALL, 5 )
 
-		self.attack_superman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman.Wrap( -1 )
+		self.attack_wonder_women = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.attack_wonder_women.Wrap( -1 )
 
-		self.attack_superman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.attack_wonder_women.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.attack_wonder_women.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer2611.Add( self.attack_superman, 0, wx.ALL, 5 )
+		bSizer2611.Add( self.attack_wonder_women, 0, wx.ALL, 5 )
 
 
 		bSizer165.Add( bSizer2611, 1, wx.EXPAND, 5 )
@@ -2065,13 +2065,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer26111.Add( self.txt_hp_superman, 1, wx.ALL, 5 )
 
-		self.HP_superman = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.HP_superman.Wrap( -1 )
+		self.hp_wonder_women = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.hp_wonder_women.Wrap( -1 )
 
-		self.HP_superman.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.HP_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.hp_wonder_women.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.hp_wonder_women.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer26111.Add( self.HP_superman, 0, wx.ALL, 5 )
+		bSizer26111.Add( self.hp_wonder_women, 0, wx.ALL, 5 )
 
 
 		bSizer165.Add( bSizer26111, 1, wx.EXPAND, 5 )
@@ -2087,13 +2087,13 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer26112.Add( self.txt_max_hp_superman, 1, wx.ALL, 5 )
 
-		self.attack_superman2 = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.attack_superman2.Wrap( -1 )
+		self.max_hp_wonder_women = wx.StaticText( self, wx.ID_ANY, u"20", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.max_hp_wonder_women.Wrap( -1 )
 
-		self.attack_superman2.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
-		self.attack_superman2.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
+		self.max_hp_wonder_women.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.max_hp_wonder_women.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
-		bSizer26112.Add( self.attack_superman2, 0, wx.ALL, 5 )
+		bSizer26112.Add( self.max_hp_wonder_women, 0, wx.ALL, 5 )
 
 
 		bSizer165.Add( bSizer26112, 1, wx.EXPAND, 5 )

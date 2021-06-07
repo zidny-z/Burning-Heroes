@@ -1520,7 +1520,7 @@
                                                 <property name="pos">-1,-1</property>
                                                 <property name="resize">Resizable</property>
                                                 <property name="show">1</property>
-                                                <property name="size">101,-1</property>
+                                                <property name="size">-1,-1</property>
                                                 <property name="style"></property>
                                                 <property name="subclass">; ; forward_declare</property>
                                                 <property name="toolbar_pane">0</property>
@@ -2579,7 +2579,7 @@
             <property name="minimum_size"></property>
             <property name="name">f_hero_menu</property>
             <property name="pos"></property>
-            <property name="size">644,607</property>
+            <property name="size">644,533</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Hero - Burning Heroes</property>
@@ -4816,7 +4816,7 @@
             <property name="minimum_size"></property>
             <property name="name">f_inventory</property>
             <property name="pos"></property>
-            <property name="size">667,538</property>
+            <property name="size">645,529</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Inventory - Burning Heroes</property>
@@ -4832,86 +4832,13 @@
                 <property name="permission">none</property>
                 <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
-                    <property name="flag"></property>
+                    <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
                     <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer26</property>
                         <property name="orient">wxHORIZONTAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="0">
-                            <property name="border">5</property>
-                            <property name="flag">wxALL</property>
-                            <property name="proportion">0</property>
-                            <object class="wxBitmapButton" expanded="0">
-                                <property name="BottomDockable">1</property>
-                                <property name="LeftDockable">1</property>
-                                <property name="RightDockable">1</property>
-                                <property name="TopDockable">1</property>
-                                <property name="aui_layer"></property>
-                                <property name="aui_name"></property>
-                                <property name="aui_position"></property>
-                                <property name="aui_row"></property>
-                                <property name="best_size"></property>
-                                <property name="bg"></property>
-                                <property name="bitmap">Load From Art Provider; wxART_GO_BACK; wxART_BUTTON</property>
-                                <property name="caption"></property>
-                                <property name="caption_visible">1</property>
-                                <property name="center_pane">0</property>
-                                <property name="close_button">1</property>
-                                <property name="context_help"></property>
-                                <property name="context_menu">1</property>
-                                <property name="current"></property>
-                                <property name="default">0</property>
-                                <property name="default_pane">0</property>
-                                <property name="disabled"></property>
-                                <property name="dock">Dock</property>
-                                <property name="dock_fixed">0</property>
-                                <property name="docking">Left</property>
-                                <property name="enabled">1</property>
-                                <property name="fg"></property>
-                                <property name="floatable">1</property>
-                                <property name="focus"></property>
-                                <property name="font"></property>
-                                <property name="gripper">0</property>
-                                <property name="hidden">0</property>
-                                <property name="id">wxID_ANY</property>
-                                <property name="label">Back Home</property>
-                                <property name="margins"></property>
-                                <property name="markup">0</property>
-                                <property name="max_size"></property>
-                                <property name="maximize_button">0</property>
-                                <property name="maximum_size"></property>
-                                <property name="min_size"></property>
-                                <property name="minimize_button">0</property>
-                                <property name="minimum_size"></property>
-                                <property name="moveable">1</property>
-                                <property name="name">back_home</property>
-                                <property name="pane_border">1</property>
-                                <property name="pane_position"></property>
-                                <property name="pane_size"></property>
-                                <property name="permission">protected</property>
-                                <property name="pin_button">1</property>
-                                <property name="pos"></property>
-                                <property name="position"></property>
-                                <property name="pressed"></property>
-                                <property name="resize">Resizable</property>
-                                <property name="show">1</property>
-                                <property name="size"></property>
-                                <property name="style"></property>
-                                <property name="subclass">; ; forward_declare</property>
-                                <property name="toolbar_pane">0</property>
-                                <property name="tooltip"></property>
-                                <property name="validator_data_type"></property>
-                                <property name="validator_style">wxFILTER_NONE</property>
-                                <property name="validator_type">wxDefaultValidator</property>
-                                <property name="validator_variable"></property>
-                                <property name="window_extra_style"></property>
-                                <property name="window_name"></property>
-                                <property name="window_style"></property>
-                                <event name="OnButtonClick">back_homeOnButtonClick</event>
-                            </object>
-                        </object>
                         <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxALL</property>
@@ -5032,6 +4959,79 @@
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
                                 <property name="wrap">-1</property>
+                            </object>
+                        </object>
+                        <object class="sizeritem" expanded="0">
+                            <property name="border">5</property>
+                            <property name="flag">wxALIGN_RIGHT|wxALL</property>
+                            <property name="proportion">0</property>
+                            <object class="wxBitmapButton" expanded="0">
+                                <property name="BottomDockable">1</property>
+                                <property name="LeftDockable">1</property>
+                                <property name="RightDockable">1</property>
+                                <property name="TopDockable">1</property>
+                                <property name="aui_layer"></property>
+                                <property name="aui_name"></property>
+                                <property name="aui_position"></property>
+                                <property name="aui_row"></property>
+                                <property name="best_size"></property>
+                                <property name="bg"></property>
+                                <property name="bitmap">Load From Art Provider; wxART_GO_BACK; wxART_BUTTON</property>
+                                <property name="caption"></property>
+                                <property name="caption_visible">1</property>
+                                <property name="center_pane">0</property>
+                                <property name="close_button">1</property>
+                                <property name="context_help"></property>
+                                <property name="context_menu">1</property>
+                                <property name="current"></property>
+                                <property name="default">0</property>
+                                <property name="default_pane">0</property>
+                                <property name="disabled"></property>
+                                <property name="dock">Dock</property>
+                                <property name="dock_fixed">0</property>
+                                <property name="docking">Left</property>
+                                <property name="enabled">1</property>
+                                <property name="fg"></property>
+                                <property name="floatable">1</property>
+                                <property name="focus"></property>
+                                <property name="font"></property>
+                                <property name="gripper">0</property>
+                                <property name="hidden">0</property>
+                                <property name="id">wxID_ANY</property>
+                                <property name="label">Back Home</property>
+                                <property name="margins"></property>
+                                <property name="markup">0</property>
+                                <property name="max_size"></property>
+                                <property name="maximize_button">0</property>
+                                <property name="maximum_size"></property>
+                                <property name="min_size"></property>
+                                <property name="minimize_button">0</property>
+                                <property name="minimum_size"></property>
+                                <property name="moveable">1</property>
+                                <property name="name">back_home</property>
+                                <property name="pane_border">1</property>
+                                <property name="pane_position"></property>
+                                <property name="pane_size"></property>
+                                <property name="permission">protected</property>
+                                <property name="pin_button">1</property>
+                                <property name="pos"></property>
+                                <property name="position"></property>
+                                <property name="pressed"></property>
+                                <property name="resize">Resizable</property>
+                                <property name="show">1</property>
+                                <property name="size"></property>
+                                <property name="style"></property>
+                                <property name="subclass">; ; forward_declare</property>
+                                <property name="toolbar_pane">0</property>
+                                <property name="tooltip"></property>
+                                <property name="validator_data_type"></property>
+                                <property name="validator_style">wxFILTER_NONE</property>
+                                <property name="validator_type">wxDefaultValidator</property>
+                                <property name="validator_variable"></property>
+                                <property name="window_extra_style"></property>
+                                <property name="window_name"></property>
+                                <property name="window_style"></property>
+                                <event name="OnButtonClick">back_homeOnButtonClick</event>
                             </object>
                         </object>
                     </object>
@@ -5532,7 +5532,7 @@
                                         <property name="gripper">0</property>
                                         <property name="hidden">0</property>
                                         <property name="id">wxID_ANY</property>
-                                        <property name="label">Potion memberikan efek damage tambahan 30%</property>
+                                        <property name="label">Potion memberikan efek damage tambahan 20% - 30%</property>
                                         <property name="markup">0</property>
                                         <property name="max_size"></property>
                                         <property name="maximize_button">0</property>
@@ -6180,7 +6180,7 @@
                                         <property name="gripper">0</property>
                                         <property name="hidden">0</property>
                                         <property name="id">wxID_ANY</property>
-                                        <property name="label">Giant Potion menambahkan Hp sebanyak 40%</property>
+                                        <property name="label">Giant Potion menambahkan Hp sebanyak 30% - 40%</property>
                                         <property name="markup">0</property>
                                         <property name="max_size"></property>
                                         <property name="maximize_button">0</property>
@@ -6382,86 +6382,13 @@
                 <property name="permission">none</property>
                 <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
-                    <property name="flag"></property>
+                    <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
                     <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer26</property>
                         <property name="orient">wxHORIZONTAL</property>
                         <property name="permission">none</property>
-                        <object class="sizeritem" expanded="0">
-                            <property name="border">5</property>
-                            <property name="flag">wxALL</property>
-                            <property name="proportion">0</property>
-                            <object class="wxBitmapButton" expanded="0">
-                                <property name="BottomDockable">1</property>
-                                <property name="LeftDockable">1</property>
-                                <property name="RightDockable">1</property>
-                                <property name="TopDockable">1</property>
-                                <property name="aui_layer"></property>
-                                <property name="aui_name"></property>
-                                <property name="aui_position"></property>
-                                <property name="aui_row"></property>
-                                <property name="best_size"></property>
-                                <property name="bg"></property>
-                                <property name="bitmap">Load From Art Provider; wxART_GO_BACK; wxART_BUTTON</property>
-                                <property name="caption"></property>
-                                <property name="caption_visible">1</property>
-                                <property name="center_pane">0</property>
-                                <property name="close_button">1</property>
-                                <property name="context_help"></property>
-                                <property name="context_menu">1</property>
-                                <property name="current"></property>
-                                <property name="default">0</property>
-                                <property name="default_pane">0</property>
-                                <property name="disabled"></property>
-                                <property name="dock">Dock</property>
-                                <property name="dock_fixed">0</property>
-                                <property name="docking">Left</property>
-                                <property name="enabled">1</property>
-                                <property name="fg"></property>
-                                <property name="floatable">1</property>
-                                <property name="focus"></property>
-                                <property name="font"></property>
-                                <property name="gripper">0</property>
-                                <property name="hidden">0</property>
-                                <property name="id">wxID_ANY</property>
-                                <property name="label">Back Home</property>
-                                <property name="margins"></property>
-                                <property name="markup">0</property>
-                                <property name="max_size"></property>
-                                <property name="maximize_button">0</property>
-                                <property name="maximum_size"></property>
-                                <property name="min_size"></property>
-                                <property name="minimize_button">0</property>
-                                <property name="minimum_size"></property>
-                                <property name="moveable">1</property>
-                                <property name="name">back_home</property>
-                                <property name="pane_border">1</property>
-                                <property name="pane_position"></property>
-                                <property name="pane_size"></property>
-                                <property name="permission">protected</property>
-                                <property name="pin_button">1</property>
-                                <property name="pos"></property>
-                                <property name="position"></property>
-                                <property name="pressed"></property>
-                                <property name="resize">Resizable</property>
-                                <property name="show">1</property>
-                                <property name="size"></property>
-                                <property name="style"></property>
-                                <property name="subclass">; ; forward_declare</property>
-                                <property name="toolbar_pane">0</property>
-                                <property name="tooltip"></property>
-                                <property name="validator_data_type"></property>
-                                <property name="validator_style">wxFILTER_NONE</property>
-                                <property name="validator_type">wxDefaultValidator</property>
-                                <property name="validator_variable"></property>
-                                <property name="window_extra_style"></property>
-                                <property name="window_name"></property>
-                                <property name="window_style"></property>
-                                <event name="OnButtonClick">back_homeOnButtonClick</event>
-                            </object>
-                        </object>
                         <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxALL</property>
@@ -6582,6 +6509,79 @@
                                 <property name="window_name"></property>
                                 <property name="window_style"></property>
                                 <property name="wrap">-1</property>
+                            </object>
+                        </object>
+                        <object class="sizeritem" expanded="0">
+                            <property name="border">5</property>
+                            <property name="flag">wxALIGN_RIGHT|wxALL</property>
+                            <property name="proportion">0</property>
+                            <object class="wxBitmapButton" expanded="0">
+                                <property name="BottomDockable">1</property>
+                                <property name="LeftDockable">1</property>
+                                <property name="RightDockable">1</property>
+                                <property name="TopDockable">1</property>
+                                <property name="aui_layer"></property>
+                                <property name="aui_name"></property>
+                                <property name="aui_position"></property>
+                                <property name="aui_row"></property>
+                                <property name="best_size"></property>
+                                <property name="bg"></property>
+                                <property name="bitmap">Load From Art Provider; wxART_GO_BACK; wxART_BUTTON</property>
+                                <property name="caption"></property>
+                                <property name="caption_visible">1</property>
+                                <property name="center_pane">0</property>
+                                <property name="close_button">1</property>
+                                <property name="context_help"></property>
+                                <property name="context_menu">1</property>
+                                <property name="current"></property>
+                                <property name="default">0</property>
+                                <property name="default_pane">0</property>
+                                <property name="disabled"></property>
+                                <property name="dock">Dock</property>
+                                <property name="dock_fixed">0</property>
+                                <property name="docking">Left</property>
+                                <property name="enabled">1</property>
+                                <property name="fg"></property>
+                                <property name="floatable">1</property>
+                                <property name="focus"></property>
+                                <property name="font"></property>
+                                <property name="gripper">0</property>
+                                <property name="hidden">0</property>
+                                <property name="id">wxID_ANY</property>
+                                <property name="label">Back Home</property>
+                                <property name="margins"></property>
+                                <property name="markup">0</property>
+                                <property name="max_size"></property>
+                                <property name="maximize_button">0</property>
+                                <property name="maximum_size"></property>
+                                <property name="min_size"></property>
+                                <property name="minimize_button">0</property>
+                                <property name="minimum_size"></property>
+                                <property name="moveable">1</property>
+                                <property name="name">back_home</property>
+                                <property name="pane_border">1</property>
+                                <property name="pane_position"></property>
+                                <property name="pane_size"></property>
+                                <property name="permission">protected</property>
+                                <property name="pin_button">1</property>
+                                <property name="pos"></property>
+                                <property name="position"></property>
+                                <property name="pressed"></property>
+                                <property name="resize">Resizable</property>
+                                <property name="show">1</property>
+                                <property name="size"></property>
+                                <property name="style"></property>
+                                <property name="subclass">; ; forward_declare</property>
+                                <property name="toolbar_pane">0</property>
+                                <property name="tooltip"></property>
+                                <property name="validator_data_type"></property>
+                                <property name="validator_style">wxFILTER_NONE</property>
+                                <property name="validator_type">wxDefaultValidator</property>
+                                <property name="validator_variable"></property>
+                                <property name="window_extra_style"></property>
+                                <property name="window_name"></property>
+                                <property name="window_style"></property>
+                                <event name="OnButtonClick">back_homeOnButtonClick</event>
                             </object>
                         </object>
                     </object>
@@ -7676,7 +7676,7 @@
             <property name="minimum_size"></property>
             <property name="name">f_fight</property>
             <property name="pos"></property>
-            <property name="size">803,589</property>
+            <property name="size">803,562</property>
             <property name="style">wxDEFAULT_FRAME_STYLE</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="title">Fight - Burning Heroes</property>
@@ -11546,7 +11546,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">attack_batman</property>
+                                                <property name="name">attack_superman4</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -11679,7 +11679,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">hp_batman</property>
+                                                <property name="name">HP_superman3</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -11812,7 +11812,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">max_hp_batman</property>
+                                                <property name="name">attack_superman23</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12093,7 +12093,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">attack_joker</property>
+                                                <property name="name">attack_superman3</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12226,7 +12226,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">hp_joker</property>
+                                                <property name="name">HP_superman2</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12359,7 +12359,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">max_hp_joker</property>
+                                                <property name="name">attack_superman22</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12640,7 +12640,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">attack_superman</property>
+                                                <property name="name">attack_superman1</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12773,7 +12773,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">hp_superman</property>
+                                                <property name="name">HP_superman1</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -12906,7 +12906,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">max_hp_superman</property>
+                                                <property name="name">attack_superman21</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -13187,7 +13187,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">attack_wonder_women</property>
+                                                <property name="name">attack_superman</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -13320,7 +13320,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">hp_wonder_women</property>
+                                                <property name="name">HP_superman</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
@@ -13453,7 +13453,7 @@
                                                 <property name="minimize_button">0</property>
                                                 <property name="minimum_size"></property>
                                                 <property name="moveable">1</property>
-                                                <property name="name">max_hp_wonder_women</property>
+                                                <property name="name">attack_superman2</property>
                                                 <property name="pane_border">1</property>
                                                 <property name="pane_position"></property>
                                                 <property name="pane_size"></property>
