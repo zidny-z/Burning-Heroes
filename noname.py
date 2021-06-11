@@ -1050,7 +1050,7 @@ class f_inventory ( wx.Frame ):
 class f_shop ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Shop - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 645,529 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"Shop - Burning Heroes", pos = wx.DefaultPosition, size = wx.Size( 846,529 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
@@ -1426,7 +1426,7 @@ class f_fight ( wx.Frame ):
 
 		bSizer234 = wx.BoxSizer( wx.VERTICAL )
 
-		self.keterangan_perang = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.keterangan_perang = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_AUTO_URL|wx.TE_MULTILINE )
 		bSizer234.Add( self.keterangan_perang, 1, wx.ALL|wx.EXPAND, 5 )
 
 
@@ -1444,12 +1444,12 @@ class f_fight ( wx.Frame ):
 
 		bSizer261163.Add( self.txt_potion, 1, wx.ALL, 5 )
 
-		self.jumlah_meat3 = wx.StaticText( self, wx.ID_ANY, u"1", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
-		self.jumlah_meat3.Wrap( -1 )
+		self.jumlah_potion = wx.StaticText( self, wx.ID_ANY, u"1", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
+		self.jumlah_potion.Wrap( -1 )
 
-		self.jumlah_meat3.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
+		self.jumlah_potion.SetFont( wx.Font( 12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, wx.EmptyString ) )
 
-		bSizer261163.Add( self.jumlah_meat3, 0, wx.ALL, 5 )
+		bSizer261163.Add( self.jumlah_potion, 0, wx.ALL, 5 )
 
 		self.btn_pakai_potion = wx.Button( self, wx.ID_ANY, u"Pakai", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer261163.Add( self.btn_pakai_potion, 0, wx.ALL, 5 )
@@ -1855,7 +1855,7 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer1653.Add( bSizer261123, 1, wx.EXPAND, 5 )
 
-		self.cb_hero_batman = wx.CheckBox( self, wx.ID_ANY, u"Pilih", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.cb_hero_batman = wx.CheckBox( self, wx.ID_ANY, u"Batman", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.cb_hero_batman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		bSizer1653.Add( self.cb_hero_batman, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -1936,7 +1936,7 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer1652.Add( bSizer261122, 1, wx.EXPAND, 5 )
 
-		self.cb_hero_joker = wx.CheckBox( self, wx.ID_ANY, u"Pilih", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.cb_hero_joker = wx.CheckBox( self, wx.ID_ANY, u"Joker", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.cb_hero_joker.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		bSizer1652.Add( self.cb_hero_joker, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -2017,7 +2017,7 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer1651.Add( bSizer261121, 1, wx.EXPAND, 5 )
 
-		self.cb_hero_superman = wx.CheckBox( self, wx.ID_ANY, u"Pilih", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.cb_hero_superman = wx.CheckBox( self, wx.ID_ANY, u"Superman", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.cb_hero_superman.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		bSizer1651.Add( self.cb_hero_superman, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -2098,7 +2098,7 @@ class f_pilih_hero_fight ( wx.Frame ):
 
 		bSizer165.Add( bSizer26112, 1, wx.EXPAND, 5 )
 
-		self.cb_hero_wonderwomen = wx.CheckBox( self, wx.ID_ANY, u"Pilih", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.cb_hero_wonderwomen = wx.CheckBox( self, wx.ID_ANY, u"Wonder Women", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.cb_hero_wonderwomen.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
 
 		bSizer165.Add( self.cb_hero_wonderwomen, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
