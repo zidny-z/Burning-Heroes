@@ -1,4 +1,4 @@
-from database_connect import koneksi
+from model.database_connect import koneksi
 import mysql.connector
 
 class get_item(koneksi):
@@ -9,34 +9,26 @@ class get_item(koneksi):
     def get_data_item(self,username):
         self.cursor.execute("select NamaItem, value, storage, price from item where username = '{}'".format(username))
         self.res = self.cursor.fetchall()
+        return self.res
 
-    def set_item_user_baru(self):
-        sql = "INSERT INTO hero(NamaItem, value, storage, price) VALUES (%s, %s, %s, %s)"
-        val = self.res
-        mycursor.executemany(sql, val)
-        mydb.commit()
+    def set_item_user_baru(self,data_item,username):
+        sql = "INSERT INTO item(NamaItem, storage, price, username) VALUES (%s, %s, %s, %s)"
+        val = [(data_item[0], data_item[2], data_item[3], username)]
+        self.cursor.executemany(sql, val)
+        self.con.commit()
 
     #mengambil storage atau jumlah item yang dimiliki
-    def get_storage_meat(self,username):
-        self.cursor.execute("select storage from item where username = '{}' and NamaItem = 'meat'".format(username))
-        self.res = self.cursor.fetchone()
-        return(self.res[0])
+    def get_storage(self,username):
+        self.cursor.execute("select storage from item where username = '{}'".format(username))
+        self.res = self.cursor.fetchall()
+        return(self.res)
 
-    def get_storage_potion(self,username):
-        self.cursor.execute("select storage from item where username = '{}' and NamaItem = 'potion'".format(username))
-        self.res = self.cursor.fetchone()
-        return(self.res[0])
+    def get_item(self,username,nama_item):
+        self.cursor.execute("select price, storage from item where username = '{}' and NamaItem = '{}'".format(username, nama_item))
+        self.res = self.cursor.fetchall()
+        return(self.res[0][0], self.res[0][1])
 
-    def get_storage_giant_potion(self,username):
-        self.cursor.execute("select storage from item where username = '{}' and NamaItem = 'giant_otion'".format(username))
-        self.res = self.cursor.fetchone()
-        return(self.res[0])
-
-    def get_storage_sharpener(self,username):
-        self.cursor.execute("select storage from item where username = '{}' and NamaItem = 'sharpener'".format(username))
-        self.res = self.cursor.fetchone()
-        return(self.res[0])
-
-user = get_item()
-print(user.get_storage_potion("poi"))
-    
+    def set_item(self,username,nama_item,storage):
+        sql = "UPDATE item SET storage='{}' WHERE username = '{}' and NamaItem ='{}'".format(storage, username, nama_item)
+        self.cursor.execute(sql)
+        self.con.commit()

@@ -1,4 +1,5 @@
 import mysql.connector
+import wx
 
 class koneksi:
     def __init__(self):
@@ -10,4 +11,4 @@ class koneksi:
             )
             self.cursor= self.con.cursor()
         except:
-            a = input("Database belum terkoneksi, silahkan koneksikan database terlebih dahulu!\nTekan apa saja untuk melanjutkan ")
+            wx.MessageBox("Database belum terkoneksi, silahkan koneksikan database terlebih dahulu!")
