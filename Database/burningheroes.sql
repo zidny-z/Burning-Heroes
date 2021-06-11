@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 03, 2021 at 10:15 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.19
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 11 Jun 2021 pada 10.26
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hero`
+-- Struktur dari tabel `hero`
 --
 
 CREATE TABLE `hero` (
@@ -38,19 +37,23 @@ CREATE TABLE `hero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hero`
+-- Dumping data untuk tabel `hero`
 --
 
 INSERT INTO `hero` (`HeroID`, `HeroName`, `HeroAttack`, `HeroHP`, `MaxHP`, `username`) VALUES
-(1, 'Batman', 35, 90, 90, 'kanzul'),
-(2, 'Superman', 25, 150, 150, 'kanzul'),
-(3, 'Joker', 40, 80, 80, 'kanzul'),
-(4, 'Wonder Women', 30, 100, 100, 'kanzul');
+(5, 'Batman', 35, 90, 90, 'Username'),
+(6, 'Superman', 25, 150, 150, 'Username'),
+(7, 'Joker', 40, 80, 80, 'Username'),
+(8, 'Wonder Women', 30, 100, 100, 'Username'),
+(24, 'Batman', 35, 90, 90, 'bot'),
+(25, 'Superman', 25, 150, 150, 'bot'),
+(26, 'Joker', 40, 80, 80, 'bot'),
+(27, 'Wonder Women', 30, 100, 100, 'bot');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item`
+-- Struktur dari tabel `item`
 --
 
 CREATE TABLE `item` (
@@ -63,19 +66,23 @@ CREATE TABLE `item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `item`
+-- Dumping data untuk tabel `item`
 --
 
 INSERT INTO `item` (`ItemID`, `NamaItem`, `value`, `storage`, `price`, `username`) VALUES
-(1, 'potion', 20, 0, 10, NULL),
-(2, 'meat', 50, 0, 10, NULL),
-(3, 'Sharpener', 20, 0, 15, NULL),
-(4, 'Giant Potion', 20, 0, 20, NULL);
+(1, 'potion', 130, 0, 10, 'bot'),
+(2, 'meat', 50, 0, 10, 'bot'),
+(3, 'Sharpener', 20, 0, 15, 'bot'),
+(4, 'Giant Potion', 140, 0, 20, 'bot'),
+(5, 'potion', NULL, 0, 10, 'Username'),
+(6, 'meat', NULL, 0, 10, 'Username'),
+(7, 'Sharpener', NULL, 0, 15, 'Username'),
+(8, 'Giant Potion', NULL, 0, 20, 'Username');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -83,69 +90,70 @@ CREATE TABLE `user` (
   `password` char(10) NOT NULL,
   `stage` int(2) DEFAULT NULL,
   `koins` int(10) DEFAULT NULL,
-  `hint` varchar(35) DEFAULT NULL
+  `hint` varchar(35) DEFAULT NULL,
+  `login_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `stage`, `koins`, `hint`) VALUES
-('aku', 'aku', 0, 200, 'me (inggris)'),
-('kanzul', 'kanzul', 1, 300, 'thisgameprogammer');
+INSERT INTO `user` (`username`, `password`, `stage`, `koins`, `hint`, `login_status`) VALUES
+('bot', 'bot', 1, 1000, 'bot', 0),
+('Username', 'Password', 5, 1040, 'Hint', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `hero`
+-- Indeks untuk tabel `hero`
 --
 ALTER TABLE `hero`
   ADD PRIMARY KEY (`HeroID`),
   ADD KEY `username` (`username`);
 
 --
--- Indexes for table `item`
+-- Indeks untuk tabel `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`ItemID`),
   ADD KEY `username` (`username`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `hero`
+-- AUTO_INCREMENT untuk tabel `hero`
 --
 ALTER TABLE `hero`
-  MODIFY `HeroID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `HeroID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT for table `item`
+-- AUTO_INCREMENT untuk tabel `item`
 --
 ALTER TABLE `item`
-  MODIFY `ItemID` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ItemID` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `hero`
+-- Ketidakleluasaan untuk tabel `hero`
 --
 ALTER TABLE `hero`
   ADD CONSTRAINT `hero_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `item`
+-- Ketidakleluasaan untuk tabel `item`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `item_ibfk_2` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
